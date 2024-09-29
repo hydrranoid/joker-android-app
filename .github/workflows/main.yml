@@ -31,7 +31,7 @@ jobs:
           buildozer -v android debug
 
       - name: Upload APK
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: apk-file
           path: ${{ github.workspace }}/bin/*.apk
