@@ -37,3 +37,9 @@ jobs:
       run: |
         cd ${{ github.workspace }}
         buildozer -v android debug
+
+    - name: Upload APK
+      uses: actions/upload-artifact@v3
+      with:
+        name: myapp-apk
+        path: bin/*.apk
