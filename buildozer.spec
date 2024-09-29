@@ -15,8 +15,6 @@ android.sdk = 24
 # (int) Android NDK version to use
 android.ndk = 21
 
-#όλες τις εξαρτήσεις που χρησιμοποιείς στο project σου. Για την εφαρμογή σου, θα χρειαστείς τουλάχιστον:
-requirements = python3,kivy,pandas
 
 # (str) Source code where the main.py live
 source.dir = .
