@@ -15,8 +15,6 @@ android.sdk = 24
 # (int) Android NDK version to use
 android.ndk = 21
 
-
-
 #όλες τις εξαρτήσεις που χρησιμοποιείς στο project σου. Για την εφαρμογή σου, θα χρειαστείς τουλάχιστον:
 requirements = python3,kivy,pandas
 
@@ -48,7 +46,7 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,kivy
+
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
