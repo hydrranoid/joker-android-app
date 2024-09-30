@@ -24,11 +24,12 @@ jobs:
           sudo apt update
           sudo apt install -y python3-pip build-essential git
           pip install buildozer cython
-          python3 -m cython --version
+          python3 -m cython --version  # Επιβεβαιώνει ότι το Cython είναι εγκατεστημένο
 
       - name: Build APK
         run: |
           cd ${{ github.workspace }}
+          yes | sdkmanager --licenses  # Αποδοχή όρων και εγκατάσταση SDK
           buildozer -v android debug
 
       - name: Upload APK
