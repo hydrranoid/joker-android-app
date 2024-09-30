@@ -22,11 +22,8 @@ source.dir = .
 # (list) Source files to include (let empty to include all the files)
 source.include_exts = py,png,jpg,kv,atlas
 
-# (str) Presplash of the application
-# presplash.filename = %(source.dir)s/data/presplash.png
-
-# (str) Icon of the application
-# icon.filename = %(source.dir)s/data/icon.png
+# (str) Version of your application
+version = 0.1
 
 # (list) Permissions
 android.permissions = INTERNET
