@@ -22,14 +22,24 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt update
-          sudo apt install -y python3-pip build-essential git
+          sudo apt install -y python3-pip build-essential git unzip
           pip install buildozer cython
-          python3 -m cython --version  # Επιβεβαιώνει ότι το Cython είναι εγκατεστημένο
+
+      - name: Set up Android SDK
+        run: |
+          wget https://dl.google.com/android/repository/commandlinetools-linux-8512546_latest.zip -O sdk-tools.zip
+          mkdir -p $HOME/android-sdk
+          unzip sdk-tools.zip -d $HOME/android-sdk/cmdline-tools
+          mv $HOME/android-sdk/cmdline-tools $HOME/android-sdk/cmdline-tools/latest
+          yes | $HOME/android-sdk/cmdline-tools/latest/bin/sdkmanager --licenses
+          $HOME/android-sdk/cmdline-tools/latest/bin/sdkmanager "platform-tools" "platforms;android-31" "build-tools;31.0.0"
 
       - name: Build APK
+        env:
+          ANDROID_HOME: $HOME/android-sdk
+          ANDROID_SDK_ROOT: $HOME/android-sdk
         run: |
           cd ${{ github.workspace }}
-          yes | sdkmanager --licenses  # Αποδοχή όρων και εγκατάσταση SDK
           buildozer -v android debug
 
       - name: Upload APK
