@@ -24,6 +24,7 @@ jobs:
           sudo apt update
           sudo apt install -y python3-pip build-essential git
           pip install buildozer cython
+          python3 -m cython --version
 
       - name: Build APK
         run: |
