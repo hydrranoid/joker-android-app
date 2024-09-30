@@ -9,15 +9,12 @@ package.name = jokerapp
 # (str) Package domain (needed for android/ios packaging)
 package.domain = org.test
 
-# (int) Android SDK version to use
-android.sdk = 24
-
 # (int) Android NDK version to use
 android.ndk = 21
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,kivy,pandas
+requirements = python3,kivy,pandas,cython
 
 # (str) Source code where the main.py live
 source.dir = .
